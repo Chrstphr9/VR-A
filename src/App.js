@@ -12,6 +12,7 @@ import {
   signInWithEmailAndPassword
   
 } from "firebase/auth";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 function App() {
   const [user, setUser] = useState("");
@@ -99,7 +100,18 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+  
+  //  <div className="App">
+  //        <Routes>
+  //     <Route path="/LogIn" element={<LogIn />} />
+  //     <Route path= "/" element={<Home />} />
+  //   </Routes>
+      
+   
+          
+      
+      <div className="App">
+      <LogIn />
       <LogIn
         email={email}
         setEmail={setEmail}
@@ -112,7 +124,10 @@ function App() {
         emailError={emailError}
         passwordError={passwordError}
       />
-    </div>
+      <Home 
+      handleLogout={handleLogout}/>
+    </div> 
+    //</div>
   );
 }
 
